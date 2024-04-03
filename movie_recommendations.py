@@ -29,8 +29,8 @@ def cosine_similarity(a, b):
 #los embeddings de cada una de las películas de la base de datos. La película con la similitud más alta al prompt sería la película
 #recomendada.
 
-req = "película de un pianista"
-emb = get_embedding(req)
+desc = "película de la segunda guerra mundial"
+emb = get_embedding(desc)
 
 sim = []
 for i in range(len(movies)):
