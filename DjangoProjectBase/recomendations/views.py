@@ -31,15 +31,12 @@ def recommendations(request):
                 emb = list(np.frombuffer(emb))
                 sim.append(cosine_similarity(emb,emb_req))
         sim = np.array(sim)
-        print(sim)
         idx = np.argmax(sim)
         idx = int(idx)
-        print(idx)
-        recom = items[idx].title
-        items = Movie.objects.filter(title__icontains=recom)
+        recom = [items[idx]]
     else:
-        items = Movie.objects.all()
-    return render(request, 'recommendations.html', {'searchTerm':req, 'movies':items})
+        recom = Movie.objects.all()
+    return render(request, 'recommendations.html', {'searchTerm':req, 'movies':recom})
 
 
 
