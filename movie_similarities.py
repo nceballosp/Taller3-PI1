@@ -60,7 +60,7 @@ print(f"Similitud entre película {movies[20]['title']} y {movies[3]['title']}: 
 #los embeddings de cada una de las películas de la base de datos. La película con la similitud más alta al prompt sería la película
 #recomendada.
 
-req = "película de la segunda guerra mundial"
+req = "pelicula de un pianista"
 emb = get_embedding(req)
 
 sim = []
